@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b6ee6a22-4da8-4b27-8505-7aec3b4eef61" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/Service/AdministrateurService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/Service/AllergeneService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/Service/CommentaireService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/Service/EmailService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/Service/HistoriqueScanService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/Service/IPersonneService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/Service/IProduitsService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/Service/Implement/AdministrateurServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/Service/Implement/AllergeneServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/Service/Implement/CommentaireServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/Service/Implement/EmailServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/Service/Implement/GoogleSpeechToTextServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/Service/Implement/HistoriqueScanServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/Service/Implement/InformationsNutritionnellesServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/Service/Implement/IngredientServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/Service/Implement/NormeHalalServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/Service/Implement/PasswordResetServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/Service/Implement/PersonneServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/Service/Implement/ProduitIngredientServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/Service/Implement/ProduitsServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/Service/Implement/ResultatAnalyseServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/Service/Implement/SubstanceNociveServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/Service/Implement/TypesProduitsServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/Service/Implement/UtilisateurAdministrateurVueServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/Service/Implement/UtilisateursServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/Service/Implement/VoiceServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/Service/InformationsNutritionnellesService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/Service/IngredientService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/Service/NormeHalalService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/Service/PasswordResetService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/Service/ProduitIngredientService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/Service/ResultatAnalyseService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/Service/SpeechToTextService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/Service/SubstanceNociveService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/Service/TypesProduitsService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/Service/UtilisateurAdministrateurVueService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/Service/UtilisateursService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/Service/VoiceService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/config/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/dao/AdministrateurRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/dao/AllergeneRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/dao/CommentaireRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/dao/HistoriqueScanRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/dao/InformationsNutritionnellesRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/dao/IngredientRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/dao/NormeHalalRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/dao/PasswordResetTokenRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/dao/PersonneRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/dao/ProduitIngredientRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/dao/ProduitsRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/dao/ResultatAnalyseRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/dao/RoleRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/dao/SubstanceNociveRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/dao/TypesProduitsRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/dao/UtilisateurAdministrateurVueRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/dao/UtilisateursRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/entite/Administrateur.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/entite/Allergene.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/entite/Commentaire.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/entite/CustomUserDetails.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/entite/HistoriqueScan.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/entite/InformationsNutritionnelles.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/entite/Ingredient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/entite/NormeHalal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/entite/PasswordResetToken.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/entite/Personne.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/entite/ProduitIngredient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/entite/ProduitIngredientKey.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/entite/Produits.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/entite/ResultatAnalyse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/entite/Role.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/entite/SubstanceNocive.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/entite/TypesProduits.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/entite/UtilisateurAdministrateurVue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/entite/Utilisateurs.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/exception/AdministrateurNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/exception/CommentaireNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/exception/EmailAlreadyInUseException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/exception/GestionnaireErreurs.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/exception/InformationsNutritionnellesNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/exception/IngredientNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/exception/NormeHalalNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/exception/ProduitIngredientNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/exception/ResourceNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/exception/ResultatAnalyseNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/exception/SubstanceNociveNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/exception/UtilisateurNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/web/AllergeneController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/web/AuthController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/web/CommentaireController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/web/DialogflowController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/web/HistoriqueScanController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/web/InformationsNutritionnellesController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/web/IngredientController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/web/LoginRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/web/NormeHalalController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/web/PasswordResetController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/web/PasswordResetRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/web/PersonneController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/web/ProduitIngredientController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/web/ProduitsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/web/ResultatAnalyseController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/web/SubstanceNociveController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/web/TypesProduitsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/web/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/web/VoiceController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="package-info" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Use Maven wrapper" />
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="workspaceImportEnabled" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2k3XdlNIVdgyIytcxKgT7BJZnAJ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Mariéta/Documents/eath_securite_alimentaire/eath_app&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.eath.web" />
+      <recent name="com.eath.dao" />
+      <recent name="org.springframework.security.config.annotation.web.builders" />
+      <recent name="com.eath.config" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.eath.entite" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="backend [spring-boot:run]" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="spring-boot:run" />
+              </list>
+            </option>
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b6ee6a22-4da8-4b27-8505-7aec3b4eef61" name="Changes" comment="" />
+      <created>1722513327136</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1722513327136</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
