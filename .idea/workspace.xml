@@ -5,24 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b6ee6a22-4da8-4b27-8505-7aec3b4eef61" name="Changes" comment="tryuioiu">
-      <change afterPath="$PROJECT_DIR$/app_eath_securite" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/Service/ActualityService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/Service/Implement/ActualityServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/entite/Actuality.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/web/ActualityController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/web/PasswordResetWithConfirmationRequest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/eath/Service/Implement/EmailServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eath/Service/Implement/EmailServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/eath/Service/Implement/PasswordResetServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eath/Service/Implement/PasswordResetServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/eath/Service/PasswordResetService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eath/Service/PasswordResetService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/eath/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eath/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/eath/dao/PasswordResetTokenRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eath/dao/PasswordResetTokenRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/eath/entite/PasswordResetToken.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eath/entite/PasswordResetToken.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/eath/web/PasswordResetController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eath/web/PasswordResetController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/eath/web/PasswordResetRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eath/web/PasswordResetRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -137,7 +121,14 @@
       <option name="project" value="LOCAL" />
       <updated>1727806680999</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="tryuioiu">
+      <created>1735234647096</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1735234647096</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
