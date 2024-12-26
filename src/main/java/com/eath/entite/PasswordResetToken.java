@@ -2,36 +2,27 @@ package com.eath.entite;
 
 import jakarta.persistence.*;
 import lombok.Data;
+
 import java.time.LocalDateTime;
 
-@Entity
 @Data
+@Entity // Mark this class as an entity
 public class PasswordResetToken {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)  // Auto-generate the ID
+    private Long id;  // Primary key for the entity
 
-    private String token;
+    private String token;  // Le token unique généré pour la réinitialisation du mot de passe
 
-    @ManyToOne
-    @JoinColumn(name = "utilisateur_id")
-    private Utilisateurs utilisateur;
+    @ManyToOne  // A user can have many reset tokens
+    @JoinColumn(name = "utilisateur_id")  // Foreign key for the user
+    private Utilisateurs utilisateur;  // L'utilisateur auquel le token appartient
 
-    private LocalDateTime expiryDate;
-
-    // Constructeur par défaut
-    public PasswordResetToken() {}
-
-    // Constructeur avec les paramètres token et utilisateur
-    public PasswordResetToken(String token, Utilisateurs utilisateur) {
-        this.token = token;
-        this.utilisateur = utilisateur;
-        this.expiryDate = LocalDateTime.now().plusHours(1); // Expiration dans 1 heure
-    }
+    private LocalDateTime expirationDate;  // La date d'expiration du token
 
     // Méthode pour vérifier si le token est expiré
     public boolean isExpired() {
-        return LocalDateTime.now().isAfter(this.expiryDate);
+        return LocalDateTime.now().isAfter(expirationDate);
     }
 }

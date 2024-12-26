@@ -54,7 +54,7 @@ public class SecurityConfig {
                                 .requestMatchers("/webhook/**").permitAll()
                                 .requestMatchers("/api/password-reset/**").permitAll()
                                 .requestMatchers("/api/preferences/**").permitAll()
-
+                                .requestMatchers("/api/actualites").permitAll()
                                 .anyRequest().authenticated() // Requiert une authentification pour toutes les autres requêtes
                 )
                 .exceptionHandling()

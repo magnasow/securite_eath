@@ -10,8 +10,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.Optional;
-import java.util.Random;
+import java.util.UUID;
+import java.security.SecureRandom;
 
 @Service
 public class PasswordResetServiceImpl implements PasswordResetService {
@@ -23,65 +25,90 @@ public class PasswordResetServiceImpl implements PasswordResetService {
     private UtilisateursRepository utilisateursRepository;
 
     @Autowired
-    private EmailService emailService;
-
-    @Autowired
     private PasswordEncoder passwordEncoder;
 
-    private static final Random RANDOM = new Random();
+    @Autowired
+    private EmailService emailService;
 
     @Override
     public boolean initiatePasswordReset(String email) {
-        Optional<Utilisateurs> optionalUtilisateur = utilisateursRepository.findByEmail(email);
+        Optional<Utilisateurs> utilisateurOpt = utilisateursRepository.findByEmail(email);
 
-        if (optionalUtilisateur.isPresent()) {
-            Utilisateurs utilisateur = optionalUtilisateur.get();
-            String token = generateResetCode(); // Utilisation du code à 3 chiffres
+        if (utilisateurOpt.isPresent()) {
+            Utilisateurs utilisateur = utilisateurOpt.get();
 
-            // Créer un nouveau token
-            PasswordResetToken passwordResetToken = new PasswordResetToken(token, utilisateur);
+            // Générer un token de 6 chiffres pour la réinitialisation
+            String token = generateSixDigitToken();
+
+            // Définir la date d'expiration du token (par exemple, 1 heure)
+            LocalDateTime expirationDate = LocalDateTime.now().plusHours(1);
+
+            // Créer un objet PasswordResetToken
+            PasswordResetToken passwordResetToken = new PasswordResetToken();
+            passwordResetToken.setToken(token);
+            passwordResetToken.setUtilisateur(utilisateur);
+            passwordResetToken.setExpirationDate(expirationDate);
+
+            // Enregistrer le token dans la base de données
             passwordResetTokenRepository.save(passwordResetToken);
 
-            // Envoyer l'e-mail avec le token
+            // Envoi du lien de réinitialisation par e-mail
             emailService.sendPasswordResetEmail(utilisateur.getEmail(), token);
-            return true;
-        } else {
-            return false; // Utilisateur non trouvé
+
+            return true; // Succès
         }
+
+        return false; // Utilisateur non trouvé
     }
 
     @Override
-    public boolean resetPassword(String token, String newPassword) {
+    public boolean verifyToken(String token) {
         Optional<PasswordResetToken> optionalToken = passwordResetTokenRepository.findByToken(token);
 
-        // Vérifier si le jeton existe
+        if (optionalToken.isPresent()) {
+            PasswordResetToken passwordResetToken = optionalToken.get();
+            return !passwordResetToken.isExpired(); // Le token est valide tant qu'il n'est pas expiré
+        }
+
+        return false; // Token invalide
+    }
+
+    @Override
+    public boolean resetPassword(String token, String newPassword, String confirmPassword) {
+        if (!newPassword.equals(confirmPassword)) {
+            return false; // Les mots de passe ne correspondent pas
+        }
+
+        Optional<PasswordResetToken> optionalToken = passwordResetTokenRepository.findByToken(token);
+
         if (optionalToken.isPresent()) {
             PasswordResetToken passwordResetToken = optionalToken.get();
 
-            // Vérifier si le jeton est expiré
             if (passwordResetToken.isExpired()) {
-                return false; // Le jeton est expiré
+                return false; // Le token est expiré
             }
 
-            // Récupérer l'utilisateur associé
+            // Récupérer l'utilisateur associé au token
             Utilisateurs utilisateur = passwordResetToken.getUtilisateur();
 
-            // Réinitialiser le mot de passe
+            // Mettre à jour le mot de passe
             utilisateur.setMotDePasse(passwordEncoder.encode(newPassword));
-            utilisateursRepository.save(utilisateur); // Sauvegarder le nouveau mot de passe
 
-            // Supprimer le jeton après réinitialisation
+            // Sauvegarder l'utilisateur avec son nouveau mot de passe
+            utilisateursRepository.save(utilisateur);
+
+            // Supprimer le token une fois utilisé
             passwordResetTokenRepository.delete(passwordResetToken);
 
             return true; // Réinitialisation réussie
-        } else {
-            return false; // Jeton invalide
         }
+
+        return false; // Token invalide
     }
 
-    private String generateResetCode() {
-        int code = RANDOM.nextInt(900) + 100; // Génère un nombre entre 100 et 999
-        return String.valueOf(code);
+    private String generateSixDigitToken() {
+        SecureRandom random = new SecureRandom();
+        int token = 100000 + random.nextInt(900000); // Génère un nombre entre 100000 et 999999
+        return String.valueOf(token);
     }
-
 }

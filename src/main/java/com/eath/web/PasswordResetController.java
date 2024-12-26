@@ -1,6 +1,7 @@
 package com.eath.web;
 
 import com.eath.Service.PasswordResetService;
+import com.eath.entite.PasswordResetToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -26,13 +27,28 @@ public class PasswordResetController {
         }
     }
 
-    @PostMapping("/reset")
-    public ResponseEntity<String> resetPassword(@Valid @RequestBody PasswordResetRequest request) {
-        boolean success = passwordResetService.resetPassword(request.getToken(), request.getNewPassword());
+    @PostMapping("/verify-token")
+    public ResponseEntity<String> verifyToken(@RequestParam String token) {
+        boolean valid = passwordResetService.verifyToken(token);
+        if (valid) {
+            return ResponseEntity.ok("Le token est valide.");
+        } else {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Erreur : Jeton invalide ou expiré.");
+        }
+    }
+
+
+    @PostMapping("/reset-password")
+    public ResponseEntity<String> resetPassword(
+            @RequestParam String token,
+            @Valid @RequestBody PasswordResetWithConfirmationRequest request) {
+
+        boolean success = passwordResetService.resetPassword(token, request.getNewPassword(), request.getConfirmPassword());
         if (success) {
             return ResponseEntity.ok("Le mot de passe a été réinitialisé avec succès.");
         } else {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Erreur : Jeton invalide ou expiré.");
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                    .body("Erreur : Les mots de passe ne correspondent pas ou jeton invalide.");
         }
     }
 }
