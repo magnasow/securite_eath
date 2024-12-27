@@ -60,4 +60,13 @@ public class UtilisateursServiceImpl implements UtilisateursService {
     public Optional<Utilisateurs> findByEmail(String email) { // Implémentez la méthode ici
         return utilisateursRepository.findByEmail(email);
     }
+    @Override
+    public boolean deleteUtilisateur(Integer id) {
+        if (utilisateursRepository.existsById(id)) {
+            utilisateursRepository.deleteById(id);
+            return true;
+        }
+        return false;
+    }
+
 }

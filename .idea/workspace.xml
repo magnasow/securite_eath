@@ -5,9 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b6ee6a22-4da8-4b27-8505-7aec3b4eef61" name="Changes" comment="tryuioiu">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/web/LoginResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/web/UtilisateurController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/eath/web/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eath/web/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/eath/Service/Implement/UtilisateursServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eath/Service/Implement/UtilisateursServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/eath/Service/UtilisateursService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eath/Service/UtilisateursService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/eath/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eath/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/eath/web/UserController.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,7 +146,14 @@
       <option name="project" value="LOCAL" />
       <updated>1735244727334</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="tryuioiu">
+      <created>1735300464108</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1735300464108</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
