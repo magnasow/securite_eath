@@ -5,6 +5,8 @@ import com.eath.dao.CommentaireRepository;
 import com.eath.entite.Commentaire;
 import com.eath.exception.CommentaireNotFoundException;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -21,8 +23,8 @@ public class CommentaireServiceImpl implements CommentaireService {
     }
 
     @Override
-    public List<Commentaire> getAllCommentaires() {
-        return commentaireRepository.findAll();
+    public Page<Commentaire> getAllCommentaires(PageRequest pageRequest) {
+        return commentaireRepository.findAll(pageRequest);
     }
 
     @Override

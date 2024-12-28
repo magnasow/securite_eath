@@ -2,7 +2,7 @@ package com.eath.entite;
 
 import jakarta.persistence.*;
 import lombok.Data;
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.validation.constraints.*;
 
 import java.time.LocalDateTime;
 
@@ -16,15 +16,16 @@ public class Commentaire {
     @Column(name = "id_commentaire")
     private Integer idCommentaire;
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_personne", nullable = false)
-    @JsonIgnore
     private Utilisateurs utilisateur;
 
-    @Column(name = "commentaire", columnDefinition = "TEXT")
+    @Lob
+    @NotBlank(message = "Le commentaire ne peut pas être vide.")
     private String commentaire;
 
-    @Column(name = "note")
+    @Min(value = 0, message = "La note doit être au moins 0.")
+    @Max(value = 10, message = "La note ne peut pas dépasser 10.")
     private Integer note;
 
     @Column(name = "date_creation", nullable = false, updatable = false)
