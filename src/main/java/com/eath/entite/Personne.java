@@ -31,7 +31,6 @@ public abstract class Personne {
     @NotBlank(message = "Le mot de passe est obligatoire.")
     @Size(min = 8, message = "Le mot de passe doit contenir au moins 8 caractères.")
     @Column(name = "mot_de_passe", nullable = false)
-    @JsonIgnore // Empêche la sérialisation du mot de passe
 
     private String motDePasse;
 
@@ -76,7 +75,5 @@ public abstract class Personne {
             this.dateCreation = new Timestamp(System.currentTimeMillis());
         }
     }
-    public Integer getIdPersonne() {
-        return idPersonne;
-    }
+
 }

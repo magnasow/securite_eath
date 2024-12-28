@@ -6,17 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="b6ee6a22-4da8-4b27-8505-7aec3b4eef61" name="Changes" comment="tryuioiu">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/eath/Service/Implement/HistoriqueScanServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eath/Service/Implement/HistoriqueScanServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/eath/Service/Implement/UtilisateursServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eath/Service/Implement/UtilisateursServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/eath/entite/Commentaire.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eath/entite/Commentaire.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/eath/entite/HistoriqueScan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eath/entite/HistoriqueScan.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/eath/entite/Personne.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eath/entite/Personne.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/eath/entite/Utilisateurs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eath/entite/Utilisateurs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/eath/web/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eath/web/AuthController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/eath/web/HistoriqueScanController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eath/web/HistoriqueScanController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/eath/web/LoginResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eath/web/LoginResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/eath/web/UtilisateurController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eath/web/UtilisateurController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -166,7 +161,14 @@
       <option name="project" value="LOCAL" />
       <updated>1735312793315</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="tryuioiu">
+      <created>1735399575471</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1735399575471</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
