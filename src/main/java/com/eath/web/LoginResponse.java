@@ -11,12 +11,16 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 public class LoginResponse {
     private String message;
+    private Integer id;
+
     private String nomPersonne;
     private String prenomPersonne;
     private String email;
     private String preferences;
     private String niveauAbonnement;
     private String photoDeProfil;
+    private BigDecimal taille;
+
     private BigDecimal poids;
     private Integer age;
     private String sexe;

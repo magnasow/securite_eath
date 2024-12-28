@@ -37,13 +37,24 @@ public class UtilisateurController {
     // Mettre à jour un utilisateur existant
     @PutMapping("/{id}")
     public ResponseEntity<Utilisateurs> updateUtilisateur(@PathVariable("id") Integer id, @RequestBody Utilisateurs utilisateur) {
-        // Chiffrer le mot de passe avant de mettre à jour
-        String encryptedPassword = passwordEncoder.encode(utilisateur.getMotDePasse());
-        utilisateur.setMotDePasse(encryptedPassword);
+        Optional<Utilisateurs> existingUtilisateurOpt = utilisateursService.getUtilisateurById(id);
 
+        if (existingUtilisateurOpt.isEmpty()) {
+            return ResponseEntity.notFound().build();
+        }
+
+        Utilisateurs existingUtilisateur = existingUtilisateurOpt.get();
+
+        // Forcer le mot de passe à rester inchangé
+        utilisateur.setMotDePasse(existingUtilisateur.getMotDePasse());
+
+        // Mettre à jour les autres champs
         Utilisateurs updatedUtilisateur = utilisateursService.updateUtilisateur(id, utilisateur);
-        return updatedUtilisateur != null ? ResponseEntity.ok(updatedUtilisateur) : ResponseEntity.notFound().build();
+
+        return ResponseEntity.ok(updatedUtilisateur);
     }
+
+
 
     // Supprimer un utilisateur
     @DeleteMapping("/{id}")

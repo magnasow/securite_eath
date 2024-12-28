@@ -3,16 +3,14 @@ package com.eath.Service.Implement;
 import com.eath.dao.UtilisateursRepository;
 import com.eath.entite.Utilisateurs;
 import com.eath.Service.UtilisateursService;
-import com.eath.exception.UtilisateurNotFoundException;
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Primary;
+import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 import java.util.Optional;
 
 @Service
-@Primary
 public class UtilisateursServiceImpl implements UtilisateursService {
 
     @Autowired
@@ -36,30 +34,21 @@ public class UtilisateursServiceImpl implements UtilisateursService {
     @Override
     public Utilisateurs updateUtilisateur(Integer id, Utilisateurs utilisateur) {
         Utilisateurs existingUtilisateur = utilisateursRepository.findById(id)
-                .orElseThrow(() -> new UtilisateurNotFoundException("Utilisateur non trouvé avec l'id : " + id));
+                .orElseThrow(() -> new EntityNotFoundException("Utilisateur avec l'ID " + id + " non trouvé."));
 
-        existingUtilisateur.setNomPersonne(utilisateur.getNomPersonne());
-        existingUtilisateur.setPrenomPersonne(utilisateur.getPrenomPersonne());
-        existingUtilisateur.setMotDePasse(utilisateur.getMotDePasse());
-        existingUtilisateur.setEmail(utilisateur.getEmail());
-        existingUtilisateur.setPhotoDeProfil(utilisateur.getPhotoDeProfil());
-        existingUtilisateur.setTaille(utilisateur.getTaille());
-        existingUtilisateur.setPoids(utilisateur.getPoids());
-        existingUtilisateur.setAge(utilisateur.getAge());
-        existingUtilisateur.setSexe(utilisateur.getSexe());
-        existingUtilisateur.setConditionsMedicales(utilisateur.getConditionsMedicales());
-        existingUtilisateur.setNiveauAbonnement(utilisateur.getNiveauAbonnement());
+        utilisateur.setMotDePasse(existingUtilisateur.getMotDePasse()); // Conserver le mot de passe
 
-        // Mise à jour des préférences si elles sont modifiées
-        existingUtilisateur.setPreferences(utilisateur.getPreferences());
+        // Copier les propriétés non nulles sauf le mot de passe
+        BeanUtils.copyProperties(utilisateur, existingUtilisateur, "idPersonne", "motDePasse");
 
         return utilisateursRepository.save(existingUtilisateur);
     }
 
     @Override
-    public Optional<Utilisateurs> findByEmail(String email) { // Implémentez la méthode ici
+    public Optional<Utilisateurs> findByEmail(String email) {
         return utilisateursRepository.findByEmail(email);
     }
+
     @Override
     public boolean deleteUtilisateur(Integer id) {
         if (utilisateursRepository.existsById(id)) {
@@ -68,5 +57,4 @@ public class UtilisateursServiceImpl implements UtilisateursService {
         }
         return false;
     }
-
 }

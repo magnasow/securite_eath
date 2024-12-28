@@ -102,6 +102,7 @@ public class AuthController {
 
             LoginResponse loginResponse = new LoginResponse(
                     "Login successful. Welcome, " + user.getNomPersonne() + "!",
+                    user.getIdPersonne(),
                     user.getNomPersonne(),
                     user.getPrenomPersonne(),
                     user.getEmail(),
@@ -109,6 +110,7 @@ public class AuthController {
                     user.getNiveauAbonnement(),
                     user.getPhotoDeProfil(),
                     user.getPoids(),
+                    user.getTaille(),
                     user.getAge(),
                     user.getSexe(),
                     user.getConditionsMedicales(),

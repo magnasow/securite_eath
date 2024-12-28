@@ -45,4 +45,8 @@ public class Utilisateurs extends Personne {
         }
         return new ArrayList<>();
     }
+    // Getter pour l'ID de l'utilisateur
+    public Integer getIdUtilisateur() {
+        return this.getIdPersonne();
+    }
 }
