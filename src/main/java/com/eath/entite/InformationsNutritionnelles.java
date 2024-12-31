@@ -1,5 +1,6 @@
 package com.eath.entite;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -16,7 +17,8 @@ public class InformationsNutritionnelles {
     @Column(name = "id_information")
     private Integer idInformation;
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
+    @JsonBackReference
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "id_produit", nullable = false)
     private Produits produit;
 
@@ -49,5 +51,4 @@ public class InformationsNutritionnelles {
     protected void onUpdate() {
         this.dateModification = LocalDateTime.now();
     }
-
 }

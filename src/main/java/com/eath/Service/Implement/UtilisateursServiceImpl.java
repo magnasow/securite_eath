@@ -36,13 +36,12 @@ public class UtilisateursServiceImpl implements UtilisateursService {
         Utilisateurs existingUtilisateur = utilisateursRepository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("Utilisateur avec l'ID " + id + " non trouvé."));
 
-        utilisateur.setMotDePasse(existingUtilisateur.getMotDePasse()); // Conserver le mot de passe
-
-        // Copier les propriétés non nulles sauf le mot de passe
+        // Mettre à jour les autres informations utilisateur sans toucher au mot de passe
         BeanUtils.copyProperties(utilisateur, existingUtilisateur, "idPersonne", "motDePasse");
 
         return utilisateursRepository.save(existingUtilisateur);
     }
+
 
     @Override
     public Optional<Utilisateurs> findByEmail(String email) {

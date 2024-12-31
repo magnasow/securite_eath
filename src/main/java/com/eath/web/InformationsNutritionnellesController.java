@@ -11,6 +11,7 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+
 @CrossOrigin
 @RestController
 @RequestMapping("/api/informations-nutritionnelles")
@@ -21,10 +22,23 @@ public class InformationsNutritionnellesController {
     private final InformationsNutritionnellesService informationsNutritionnellesService;
 
     @PostMapping
-    public ResponseEntity<InformationsNutritionnelles> createInformationsNutritionnelles(@Valid @RequestBody InformationsNutritionnelles info) {
-        InformationsNutritionnelles savedInfo = informationsNutritionnellesService.addInformationsNutritionnelles(info);
-        return ResponseEntity.status(HttpStatus.CREATED).body(savedInfo);
+    public ResponseEntity<InformationsNutritionnelles> addInformationsNutritionnellesWithCodeBarre(
+            @RequestParam String codeBarre,
+            @RequestBody InformationsNutritionnelles infoNut) {
+
+        try {
+            InformationsNutritionnelles createdInfo = informationsNutritionnellesService.addInformationsNutritionnellesWithCodeBarre(codeBarre, infoNut);
+            return ResponseEntity.status(HttpStatus.CREATED).body(createdInfo);
+        } catch (RuntimeException e) {
+            // Gérer l'erreur de produit non trouvé ou tout autre type d'exception
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        } catch (Exception e) {
+            // Pour toutes les autres exceptions générales
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body(null); // Vous pouvez ajouter un message d'erreur personnalisé dans le corps de la réponse
+        }
     }
+
 
     @GetMapping
     public ResponseEntity<List<InformationsNutritionnelles>> getAllInformationsNutritionnelles() {
@@ -34,8 +48,12 @@ public class InformationsNutritionnellesController {
 
     @GetMapping("/{id}")
     public ResponseEntity<InformationsNutritionnelles> getInformationsNutritionnellesById(@PathVariable Integer id) {
-        InformationsNutritionnelles info = informationsNutritionnellesService.getInformationsNutritionnellesById(id);
-        return ResponseEntity.ok(info);
+        try {
+            InformationsNutritionnelles info = informationsNutritionnellesService.getInformationsNutritionnellesById(id);
+            return ResponseEntity.ok(info);
+        } catch (InformationsNutritionnellesNotFoundException ex) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
     }
 
     @PutMapping("/{id}")
@@ -43,14 +61,22 @@ public class InformationsNutritionnellesController {
             @PathVariable Integer id,
             @Valid @RequestBody InformationsNutritionnelles info
     ) {
-        InformationsNutritionnelles updatedInfo = informationsNutritionnellesService.updateInformationsNutritionnelles(id, info);
-        return ResponseEntity.ok(updatedInfo);
+        try {
+            InformationsNutritionnelles updatedInfo = informationsNutritionnellesService.updateInformationsNutritionnelles(id, info);
+            return ResponseEntity.ok(updatedInfo);
+        } catch (InformationsNutritionnellesNotFoundException ex) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteInformationsNutritionnelles(@PathVariable Integer id) {
-        informationsNutritionnellesService.deleteInformationsNutritionnelles(id);
-        return ResponseEntity.noContent().build();
+        try {
+            informationsNutritionnellesService.deleteInformationsNutritionnelles(id);
+            return ResponseEntity.noContent().build();
+        } catch (InformationsNutritionnellesNotFoundException ex) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }
     }
 
     @ExceptionHandler(InformationsNutritionnellesNotFoundException.class)

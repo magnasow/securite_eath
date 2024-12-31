@@ -1,6 +1,6 @@
 package com.eath.web;
 
-import com.eath.Service.Implement.ProduitsServiceImpl;
+import com.eath.Service.IProduitsService;
 import com.eath.entite.Produits;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -14,40 +14,40 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/produits")
 public class ProduitsController {
-    private final ProduitsServiceImpl produitsService;
+    private final IProduitsService produitsService;
 
-    @PostMapping("/addProduits")
+    @PostMapping
     public ResponseEntity<Produits> addProduits(@RequestBody Produits produits) {
-        Produits prod = produitsService.addProduits(produits);
-        return ResponseEntity.status(HttpStatus.CREATED).body(prod);
+        try {
+            Produits createdProduit = produitsService.addProduits(produits);
+            return ResponseEntity.status(HttpStatus.CREATED).body(createdProduit);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
+        }
     }
 
-    @GetMapping("/listProduits")
+    @GetMapping
     public ResponseEntity<List<Produits>> listProduits() {
         return ResponseEntity.ok(produitsService.getAllProduits());
     }
 
-    @PutMapping("/updateProduits/{idProduit}")
+    @PutMapping("/{idProduit}")
     public ResponseEntity<Produits> updateProduits(@PathVariable Integer idProduit, @RequestBody Produits produits) {
-        // Fetch the existing produit
-        Produits existingProduit = produitsService.getOneProduits(idProduit);
-
-        // Update fields
-        existingProduit.setNomProduit(produits.getNomProduit());
-        existingProduit.setCodeBarre(produits.getCodeBarre());
-        existingProduit.setDescriptionProduit(produits.getDescriptionProduit());
-        existingProduit.setNormeHalal(produits.getNormeHalal());
-
-        // Save updates
-        Produits updatedProduit = produitsService.updateProduits(idProduit, existingProduit);
-        return ResponseEntity.status(HttpStatus.ACCEPTED).body(updatedProduit);
+        try {
+            Produits updatedProduit = produitsService.updateProduits(idProduit, produits);
+            return ResponseEntity.status(HttpStatus.ACCEPTED).body(updatedProduit);
+        } catch (RuntimeException e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
     }
 
-
-
-
-    @GetMapping("/getOneProduits/{idProduit}")
+    @GetMapping("/{idProduit}")
     public ResponseEntity<Produits> getOneProduits(@PathVariable Integer idProduit) {
-        return ResponseEntity.ok(produitsService.getOneProduits(idProduit));
+        try {
+            Produits produit = produitsService.getOneProduits(idProduit);
+            return ResponseEntity.ok(produit);
+        } catch (RuntimeException e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
     }
 }

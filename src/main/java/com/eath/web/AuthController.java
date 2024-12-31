@@ -1,5 +1,6 @@
 package com.eath.web;
 
+import com.eath.Service.UtilisateurAdministrateurVueService;
 import com.eath.Service.UtilisateursService;
 import com.eath.Service.AdministrateurService;
 import com.eath.dao.RoleRepository;
@@ -19,6 +20,7 @@ import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
@@ -46,7 +48,10 @@ public class AuthController {
 
     @Autowired
     private PasswordEncoder passwordEncoder;
-
+    @Autowired
+    private UserDetailsService userDetailsService;
+    @Autowired
+    private UtilisateurAdministrateurVueService utilisateurAdministrateurVueService;
     @PostMapping("/register")
     public ResponseEntity<String> registerUser(@RequestBody Utilisateurs user) {
         try {
@@ -124,6 +129,19 @@ public class AuthController {
         } catch (AuthenticationException e) {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
                     .body("Login failed: " + e.getMessage());
+        }
+    }
+    @PutMapping("/users/{userId}/preferences")
+    public ResponseEntity<String> updateUserPreferences(@PathVariable Integer userId, @RequestBody List<String> preferences) {
+        Optional<Utilisateurs> utilisateurOpt = utilisateursService.getUtilisateurById(userId);
+
+        if (utilisateurOpt.isPresent()) {
+            Utilisateurs utilisateur = utilisateurOpt.get();
+            utilisateur.setPreferences(preferences);
+            utilisateursService.updateUtilisateur(userId, utilisateur);
+            return ResponseEntity.ok("Préférences mises à jour avec succès");
+        } else {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Utilisateur non trouvé");
         }
     }
 

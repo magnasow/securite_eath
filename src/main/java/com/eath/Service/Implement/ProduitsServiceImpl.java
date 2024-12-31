@@ -8,9 +8,9 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.List;
+
 @Service
 @RequiredArgsConstructor
-
 public class ProduitsServiceImpl implements IProduitsService {
     private final ProduitsRepository produitsRepository;
 
@@ -31,21 +31,15 @@ public class ProduitsServiceImpl implements IProduitsService {
         existingProduits.setTypeProduit(produits.getTypeProduit());
         existingProduits.setCodeBarre(produits.getCodeBarre());
         existingProduits.setDescriptionProduit(produits.getDescriptionProduit());
-        // Pas besoin de mettre à jour la date de création
-        // existingProduits.setDateCreation(produits.getDateCreation());
-
-        // Optionnel : mise à jour de la date de modification
         existingProduits.setDateModification(LocalDateTime.now());
-
-
         return produitsRepository.save(existingProduits);
     }
 
-
-
     @Override
     public Produits getOneProduits(Integer idProduit) {
-        return produitsRepository.findById(idProduit).orElseThrow(()->
-        new RuntimeException("Le produit  recherché n'existe pas")) ;
+        return produitsRepository.findById(idProduit).orElseThrow(() ->
+                new RuntimeException("Le produit recherché n'existe pas"));
     }
+
+
 }

@@ -10,6 +10,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -18,10 +19,34 @@ public class InformationsNutritionnellesServiceImpl implements InformationsNutri
     private final InformationsNutritionnellesRepository infoRepo;
     private final ProduitsRepository produitsRepo;
 
+
     @Override
-    public InformationsNutritionnelles addInformationsNutritionnelles(InformationsNutritionnelles info) {
+    public InformationsNutritionnelles addInformationsNutritionnellesWithCodeBarre(String codeBarre, InformationsNutritionnelles info) {
+        // Vérifier si un produit avec le codeBarre existe déjà
+        Optional<Produits> existingProduit = produitsRepo.findByCodeBarre(codeBarre);
+
+        // Si le produit existe déjà, on ne crée pas un nouveau produit
+        if (existingProduit.isPresent()) {
+            // Associer le produit existant aux informations nutritionnelles
+            info.setProduit(existingProduit.get());
+        } else {
+            // Si le produit n'existe pas, on crée un nouveau produit
+            Produits newProduit = new Produits();
+            newProduit.setCodeBarre(codeBarre);
+            newProduit.setNomProduit("Produit avec code " + codeBarre); // Exemple de nom, ajuster selon votre logique
+            newProduit.setDescriptionProduit("Description du produit pour " + codeBarre);
+
+            // Sauvegarder le nouveau produit
+            newProduit = produitsRepo.save(newProduit); // Le produit sera sauvegardé et un idProduit sera généré
+
+            // Associer le nouveau produit aux informations nutritionnelles
+            info.setProduit(newProduit);
+        }
+
+        // Sauvegarde des informations nutritionnelles
         return infoRepo.save(info);
     }
+
 
     @Override
     public List<InformationsNutritionnelles> getAllInformationsNutritionnelles() {
