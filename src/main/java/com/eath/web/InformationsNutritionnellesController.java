@@ -1,16 +1,20 @@
 package com.eath.web;
 
 import com.eath.Service.InformationsNutritionnellesService;
+import com.eath.dao.ProduitsRepository;
 import com.eath.entite.InformationsNutritionnelles;
+import com.eath.entite.Produits;
 import com.eath.exception.InformationsNutritionnellesNotFoundException;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @CrossOrigin
 @RestController
@@ -18,8 +22,11 @@ import java.util.List;
 @RequiredArgsConstructor
 @Validated
 public class InformationsNutritionnellesController {
-
+    @Autowired
     private final InformationsNutritionnellesService informationsNutritionnellesService;
+
+    @Autowired
+    private ProduitsRepository produitsRepository;
 
     @PostMapping
     public ResponseEntity<InformationsNutritionnelles> addInformationsNutritionnellesWithCodeBarre(
@@ -46,15 +53,29 @@ public class InformationsNutritionnellesController {
         return ResponseEntity.ok(infos);
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<InformationsNutritionnelles> getInformationsNutritionnellesById(@PathVariable Integer id) {
-        try {
-            InformationsNutritionnelles info = informationsNutritionnellesService.getInformationsNutritionnellesById(id);
-            return ResponseEntity.ok(info);
-        } catch (InformationsNutritionnellesNotFoundException ex) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+    @GetMapping("/produit")
+    public ResponseEntity<InformationsNutritionnelles> getInformationsNutritionnellesByCodebarre(
+            @RequestParam String codeBarre) {
+
+        Optional<Produits> produit = produitsRepository.findByCodeBarre(codeBarre);
+
+        if (produit.isPresent()) {
+            Optional<InformationsNutritionnelles> informations = informationsNutritionnellesService
+                    .getInformationsNutritionnellesByProduitId(produit.get().getIdProduit());
+
+            if (informations.isPresent()) {
+                return ResponseEntity.ok(informations.get());
+            } else {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                        .body(null);
+            }
+        } else {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                    .body(null);
         }
     }
+
+
 
     @PutMapping("/{id}")
     public ResponseEntity<InformationsNutritionnelles> updateInformationsNutritionnelles(

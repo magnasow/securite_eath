@@ -57,6 +57,10 @@ public class SecurityConfig {
                                 .requestMatchers("/api/password-reset/**").permitAll()
                                 .requestMatchers("/api/preferences/**").permitAll()
                                 .requestMatchers("/api/actualites").permitAll()
+                                .requestMatchers("/api/nutritions").permitAll()
+                                .requestMatchers("/api/recettes").permitAll()
+                                .requestMatchers("/api/diet-info").permitAll()
+
                                 .anyRequest().authenticated() // Requiert une authentification pour toutes les autres requêtes
                 )
                 .exceptionHandling()

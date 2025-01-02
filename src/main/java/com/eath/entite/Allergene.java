@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import java.time.LocalDateTime;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -18,8 +19,10 @@ public class Allergene {
     @Column(name = "id_allergene")
     private int id;
 
-    @Column(name = "nom_allergene", nullable = false)
-    private String nomAllergene;
+
+    // Utiliser une colonne simple pour stocker les noms d'allergènes séparés par des virgules
+    @Column(name = "nom_allergene")
+    private String nomAllergenes;
 
     @Column(name = "description_allergene")
     private String descriptionAllergene;

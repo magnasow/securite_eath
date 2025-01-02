@@ -14,6 +14,8 @@ public class InformationsNutritionnellesDTO {
     private BigDecimal proteines;
     private BigDecimal graisses;
     private BigDecimal glucides;
+    private String dateCreation;
+    private String dateModification;
 
     // Method to convert from entity to DTO
     public static InformationsNutritionnellesDTO fromEntity(InformationsNutritionnelles info) {
@@ -24,7 +26,8 @@ public class InformationsNutritionnellesDTO {
         dto.setProteines(info.getProteines());
         dto.setGraisses(info.getGraisses());
         dto.setGlucides(info.getGlucides());
+        dto.setDateCreation(info.getDateCreation().toString());
+        dto.setDateModification(info.getDateModification().toString());
         return dto;
     }
 }
-

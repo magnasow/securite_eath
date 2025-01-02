@@ -1,15 +1,14 @@
 package com.eath.entite;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
 import jakarta.persistence.*;
 import lombok.Data;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "historique_scans")
 @Data
+@JsonIgnoreProperties({"utilisateur", "produit"})  // Ignore associations pour éviter récursivité infinie
 public class HistoriqueScan {
 
     @Id
@@ -17,14 +16,12 @@ public class HistoriqueScan {
     @Column(name = "id_historique_scan")
     private Integer idHistoriqueScan;
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
-    @JoinColumn(name = "id_personne", nullable = false)
-    @JsonIgnore
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_personne")
     private Utilisateurs utilisateur;
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
-    @JoinColumn(name = "id_produit", nullable = false)
-    @JsonIgnore
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_produit")
     private Produits produit;
 
     @Column(name = "date_scan", nullable = false, updatable = false)

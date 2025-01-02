@@ -144,5 +144,32 @@ public class AuthController {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Utilisateur non trouvé");
         }
     }
+    // Mettre à jour les conditions médicales d'un utilisateur
+    @PutMapping("/{id}/conditions-medicales/update")
+    public ResponseEntity<String> updateConditionsMedicalesWithNewEndpoint(
+            @PathVariable("id") Integer id,
+            @RequestBody String conditionsMedicales) {
 
+        Optional<Utilisateurs> utilisateurOpt = utilisateursService.getUtilisateurById(id);
+        if (utilisateurOpt.isEmpty()) {
+            return ResponseEntity.notFound().build();  // Utilisateur non trouvé
+        }
+
+        Utilisateurs utilisateur = utilisateurOpt.get();
+        utilisateur.setConditionsMedicales(conditionsMedicales);  // Mise à jour des conditions médicales
+        utilisateursService.updateUtilisateur(id, utilisateur);  // Mise à jour dans la base de données
+
+        return ResponseEntity.ok("Les conditions médicales ont été mises à jour avec succès");
+    }
+
+    // Récupérer les conditions médicales d'un utilisateur
+    @GetMapping("/{id}/conditions-medicales")
+    public ResponseEntity<String> getConditionsMedicales(@PathVariable("id") Integer id) {
+        Optional<Utilisateurs> utilisateurOpt = utilisateursService.getUtilisateurById(id);
+        if (utilisateurOpt.isEmpty()) {
+            return ResponseEntity.notFound().build();
+        }
+
+        return ResponseEntity.ok(utilisateurOpt.get().getConditionsMedicales());
+    }
 }
