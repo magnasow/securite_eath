@@ -13,5 +13,5 @@ public interface UtilisateursService {
     Optional<Utilisateurs> findByEmail(String email);
     boolean deleteUtilisateur(Integer id);
     Utilisateurs saveUtilisateur(Utilisateurs utilisateur);
-
+    Optional<Utilisateurs> findById(Integer id);
 }

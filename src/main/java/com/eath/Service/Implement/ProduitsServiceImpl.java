@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -40,6 +41,8 @@ public class ProduitsServiceImpl implements IProduitsService {
         return produitsRepository.findById(idProduit).orElseThrow(() ->
                 new RuntimeException("Le produit recherché n'existe pas"));
     }
-
-
+    @Override
+    public Optional<Produits> findById(Integer id) {
+        return produitsRepository.findById(id);
+    }
 }

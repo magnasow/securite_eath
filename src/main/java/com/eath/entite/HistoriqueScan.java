@@ -17,8 +17,9 @@ public class HistoriqueScan {
     private Integer idHistoriqueScan;
 
     @ManyToOne
-    @JoinColumn(name = "id_personne", nullable = false)
+    @JoinColumn(name = "id_utilisateur", referencedColumnName = "id_personne", nullable = false)
     private Utilisateurs utilisateur;
+
 
     @ManyToOne
     @JoinColumn(name = "id_produit", nullable = false)

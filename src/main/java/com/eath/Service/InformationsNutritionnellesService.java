@@ -1,6 +1,7 @@
 package com.eath.Service;
 
 import com.eath.entite.InformationsNutritionnelles;
+import com.eath.entite.Produits;
 
 import java.util.List;
 import java.util.Optional;
@@ -14,4 +15,7 @@ public interface InformationsNutritionnellesService {
 
     // Ajout de la méthode pour récupérer les informations nutritionnelles par produit
     Optional<InformationsNutritionnelles> getInformationsNutritionnellesByProduitId(Integer idProduit);
+
+   Optional<InformationsNutritionnelles> findByProduit(Produits produit) ;
+
 }

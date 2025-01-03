@@ -79,4 +79,11 @@ public class InformationsNutritionnellesServiceImpl implements InformationsNutri
         // Trouver les informations nutritionnelles par l'id du produit
         return infoRepo.findByProduit_IdProduit(idProduit);
     }
+
+    private final InformationsNutritionnellesRepository informationsNutritionnellesRepository;
+
+    // Méthode pour récupérer les informations nutritionnelles associées à un produit
+    public Optional<InformationsNutritionnelles> findByProduit(Produits produit) {
+        return informationsNutritionnellesRepository.findByProduit(produit);
+    }
 }

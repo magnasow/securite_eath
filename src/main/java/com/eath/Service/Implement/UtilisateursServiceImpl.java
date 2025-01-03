@@ -57,7 +57,10 @@ public class UtilisateursServiceImpl implements UtilisateursService {
         }
         return false;
     }
-
+    @Override
+    public Optional<Utilisateurs> findById(Integer id) {
+        return utilisateursRepository.findById(id);
+    }
     @Override
     public Utilisateurs saveUtilisateur(Utilisateurs utilisateur) {
         return utilisateursRepository.save(utilisateur);
