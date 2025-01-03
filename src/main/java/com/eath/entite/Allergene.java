@@ -21,7 +21,7 @@ public class Allergene {
 
 
     // Utiliser une colonne simple pour stocker les noms d'allergènes séparés par des virgules
-    @Column(name = "nom_allergene")
+    @Column(name = "nom_allergene", unique = true)
     private String nomAllergenes;
 
     @Column(name = "description_allergene")

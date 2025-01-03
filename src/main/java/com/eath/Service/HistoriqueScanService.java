@@ -1,9 +1,7 @@
-package com.eath.service;
+package com.eath.Service;
 
 import com.eath.entite.HistoriqueScan;
 
 public interface HistoriqueScanService {
-
-    // Méthode pour créer un historique de scan
-    HistoriqueScan createHistoriqueScan(HistoriqueScan historiqueScan);
+    HistoriqueScan enregistrerScan(HistoriqueScan historiqueScan);
 }

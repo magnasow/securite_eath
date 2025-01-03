@@ -28,6 +28,14 @@ public class Utilisateurs extends Personne {
             inverseJoinColumns = @JoinColumn(name = "role_id")
     )
     private Set<Role> roles = new HashSet<>();
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(
+            name = "utilisateur_allergene",
+            joinColumns = @JoinColumn(name = "utilisateur_id"),
+            inverseJoinColumns = @JoinColumn(name = "allergene_id")
+    )
+    private Set<Allergene> allergenes = new HashSet<>();
+
 
     // Méthode pour convertir une liste en chaîne de préférences
     public void setPreferences(List<String> preferencesList) {

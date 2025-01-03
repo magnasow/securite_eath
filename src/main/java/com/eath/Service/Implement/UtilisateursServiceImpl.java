@@ -28,8 +28,9 @@ public class UtilisateursServiceImpl implements UtilisateursService {
 
     @Override
     public Optional<Utilisateurs> getUtilisateurById(Integer id) {
-        return utilisateursRepository.findById(id);
+        return utilisateursRepository.findById(id); // Returns an Optional<Utilisateurs>
     }
+
 
     @Override
     public Utilisateurs updateUtilisateur(Integer id, Utilisateurs utilisateur) {
@@ -55,5 +56,10 @@ public class UtilisateursServiceImpl implements UtilisateursService {
             return true;
         }
         return false;
+    }
+
+    @Override
+    public Utilisateurs saveUtilisateur(Utilisateurs utilisateur) {
+        return utilisateursRepository.save(utilisateur);
     }
 }

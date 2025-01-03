@@ -5,37 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b6ee6a22-4da8-4b27-8505-7aec3b4eef61" name="Changes" comment="tryuioiu">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/Service/Implement/NutritionInfoServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/Service/Implement/NutritionServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/Service/Implement/RecetteServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/Service/NutritionInfoService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/Service/NutritionService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/Service/RecetteService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/dao/NutritionInfoRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/entite/Nutrition.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/entite/NutritionInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/entite/Recette.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/web/NutritionController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/web/NutritionInfoController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/web/RecetteController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eath/web/AllergeneRequest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/eath/Service/AllergeneService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eath/Service/AllergeneService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/eath/Service/HistoriqueScanService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eath/Service/HistoriqueScanService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/eath/Service/Implement/AllergeneServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eath/Service/Implement/AllergeneServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/eath/Service/Implement/HistoriqueScanServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eath/Service/Implement/HistoriqueScanServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/eath/Service/Implement/InformationsNutritionnellesServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eath/Service/Implement/InformationsNutritionnellesServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/eath/Service/InformationsNutritionnellesService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eath/Service/InformationsNutritionnellesService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/eath/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eath/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/eath/Service/Implement/UtilisateursServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eath/Service/Implement/UtilisateursServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/eath/Service/UtilisateursService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eath/Service/UtilisateursService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/eath/dao/AllergeneRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eath/dao/AllergeneRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/eath/dao/HistoriqueScanRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eath/dao/HistoriqueScanRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/eath/dao/InformationsNutritionnellesRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eath/dao/InformationsNutritionnellesRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/eath/dao/UtilisateursRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eath/dao/UtilisateursRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/eath/entite/Allergene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eath/entite/Allergene.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/eath/entite/HistoriqueScan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eath/entite/HistoriqueScan.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/eath/entite/Utilisateurs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eath/entite/Utilisateurs.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/eath/web/AllergeneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eath/web/AllergeneController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/eath/web/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eath/web/AuthController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/eath/web/HistoriqueScanController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eath/web/HistoriqueScanController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/eath/web/InformationsNutritionnellesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eath/web/InformationsNutritionnellesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/eath/web/InformationsNutritionnellesDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eath/web/InformationsNutritionnellesDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -213,7 +197,14 @@
       <option name="project" value="LOCAL" />
       <updated>1735650980335</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="tryuioiu">
+      <created>1735840664546</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1735840664546</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
