@@ -113,4 +113,44 @@ public class CommentaireController {
 
         return ResponseEntity.ok(response);
     }
+    @PutMapping("/{id}")
+    public ResponseEntity<CommentaireResponse> updateCommentaire(
+            @PathVariable Integer id,
+            @Valid @RequestBody CommentaireRequest commentaireRequest) {
+
+        Commentaire commentaireToUpdate = commentaireService.getCommentaireById(id);
+
+        commentaireToUpdate.setCommentaire(commentaireRequest.getCommentaire());
+        commentaireToUpdate.setNote(commentaireRequest.getNote());
+
+        // Update user reference only if utilisateurId is provided
+        if (commentaireRequest.getUtilisateurId() != null) {
+            Utilisateurs utilisateur = utilisateursRepository
+                    .findById(commentaireRequest.getUtilisateurId())
+                    .orElseThrow(() -> new CommentaireNotFoundException("Utilisateur non trouvé"));
+            commentaireToUpdate.setUtilisateur(utilisateur);
+        }
+
+        Commentaire updatedCommentaire = commentaireService.updateCommentaire(id, commentaireToUpdate);
+
+        // Convert to CommentaireResponse
+        CommentaireResponse response = new CommentaireResponse();
+        response.setIdCommentaire(updatedCommentaire.getIdCommentaire());
+        response.setCommentaire(updatedCommentaire.getCommentaire());
+        response.setNote(updatedCommentaire.getNote());
+        response.setDateCreation(updatedCommentaire.getDateCreation());
+        response.setDateModification(updatedCommentaire.getDateModification());
+        response.setNomPersonne(updatedCommentaire.getUtilisateur().getNomPersonne());
+        response.setPrenomPersonne(updatedCommentaire.getUtilisateur().getPrenomPersonne());
+        response.setPhotoDeProfil(updatedCommentaire.getUtilisateur().getPhotoDeProfil());
+
+        return ResponseEntity.ok(response);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteCommentaire(@PathVariable Integer id) {
+        commentaireService.deleteCommentaire(id);
+        return ResponseEntity.noContent().build();
+    }
+
 }
